@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercício ProfileCard</title>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root">Carregando Perfil...</div>
+
+  <script type="text/babel">
+    function ProfileCard(props) {
+      return (
+        <div style={{
+          border: '1px solid #ccc',
+          padding: '10px',
+          borderRadius: '8px',
+          width: '200px',
+          marginBottom: '10px'
+        }}>
+          <img src={props.imagemUrl} alt={props.nome} style={{ width: '100%', borderRadius: '5px' }} />
+          <h2>{props.nome}</h2>
+          <p>{props.descricao}</p>
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <h1>Exercício de Card de Perfil</h1>
+          <ProfileCard
+            nome="João"
+            imagemUrl="https://via.placeholder.com/150"
+            descricao="Desenvolvedor Frontend apaixonado por React." />
+          <ProfileCard
+            nome="Nicole"
+            imagemUrl="https://via.placeholder.com/150"
+            descricao="Estudante dedicada de Programação Web." />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>

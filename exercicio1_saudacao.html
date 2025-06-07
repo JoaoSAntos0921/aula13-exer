@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercício Saudação</title>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root">Carregando Saudação...</div>
+
+  <script type="text/babel">
+    function SaudacaoUsuario(props) {
+      return <p>Olá, {props.nome}! Bem-vindo(a)!</p>;
+    }
+
+    function App() {
+      return (
+        <div>
+          <h1>Exercício de Saudação</h1>
+          <SaudacaoUsuario nome="JOao" />
+          <SaudacaoUsuario nome="Turma de React" />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>

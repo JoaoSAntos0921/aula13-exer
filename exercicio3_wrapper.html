@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercício Wrapper</title>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root">Carregando Wrapper...</div>
+
+  <script type="text/babel">
+    function Wrapper(props) {
+      return (
+        <div style={{
+          border: '2px dashed blue',
+          padding: '15px',
+          margin: '15px 0'
+        }}>
+          {props.children}
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <h1>Exercício de Wrapper</h1>
+
+          <Wrapper>
+            <p>Conteúdo dentro </p>
+          </Wrapper>
+
+          <Wrapper>
+            <div>
+              <h3>Card embutido</h3>
+              <p>Informações sou forte.</p>
+            </div>
+          </Wrapper>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>
